@@ -1,0 +1,87 @@
+﻿@model IEnumerable<GYM_MANAGER_PROJECTFSOFT.Models.GIOHANG>
+
+@{
+    ViewBag.Title = "Sports Store: Your Cart";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+    decimal? total = 0;
+}
+
+<style>
+    .image_order_item {
+        object-fit: cover;
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+    }
+
+    #cartTable {
+        vertical-align: middle;
+    }
+
+    .bottom-btn-group{
+        display:flex;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom:16px;
+    }
+
+    .button_custom{
+        width:auto !important;
+    }
+
+</style>
+
+<h2 class="mt-4">Your cart</h2>
+<div class="container-fluid">
+    <table id="cartTable" class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">Item</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Subtotal</th>
+                    <th class="text-center">Actions </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    total += item.SoLuong * item.SANPHAM.Gia;
+                    <tr>
+                        <td class="text-center">
+                            <img src="https://picsum.photos/200" alt="..." class="image_order_item" />
+                        </td>
+                        <td class="text-center">@item.SoLuong</td>
+                        <td class="text-center">@item.SANPHAM.TenSanPham</td>
+                        <td class="text-center">@item.SANPHAM.Gia.ToString()</td>
+                        <td class="text-center">
+                            @((item.SoLuong * item.SANPHAM.Gia).ToString())
+                        </td>
+                        <td class="text-center">
+                            @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                            {
+                                @Html.Hidden("MaSanPham", item.SANPHAM.MaSanPham)
+                                @Html.Hidden("ReturnUrl", (string)ViewBag.ReturnUrl)
+                                <input class="btn btn-sm btn-warning" type="submit" value="Remove" />
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="text-end text-right">Total:</td>
+                    <td class="text-center">
+                        @total.ToString() VNĐ
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+</div>
+
+<div class="bottom-btn-group">
+    <a class="primary-btn button_custom" href="@ViewBag.ReturnUrl">Continue shopping</a>
+    @Html.ActionLink("Checkout now", "Checkout", null, new { @class = "primary-btn" })
+</div>

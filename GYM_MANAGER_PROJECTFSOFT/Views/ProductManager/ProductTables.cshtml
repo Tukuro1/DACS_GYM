@@ -1,0 +1,100 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<GYM_MANAGER_PROJECTFSOFT.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "ProductTables";
+    Layout = "~/Views/AdminLayout/AdminLayout.cshtml";
+}
+
+<h2>Product List</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Search by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" class="btn btn-outline-info" />
+    </p>
+}
+<style>
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+    }
+</style>
+
+<p>
+    @Html.ActionLink("Create New", "CreateProduct")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p class="text-center">Product Code</p>
+        </th>
+        <th>
+            <p class="text-center">Name</p>
+        </th>
+        <th>
+            <p class="text-center">Description</p>
+        </th>
+        <th>
+            <p class="text-center">Price</p>
+        </th>
+        <th>
+            <p class="text-center">Category</p>
+        </th>
+        <th>
+            <p class="text-center">Picture</p>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <p class="text-center"> @Html.DisplayFor(modelItem => item.MaSanPham)</p>
+            </td>
+            <td>
+                <p class="text-center">@Html.DisplayFor(modelItem => item.TenSanPham) </p>
+            </td>
+            <td>
+                <p class="text-center">@Html.DisplayFor(modelItem => item.MoTa) </p>
+            </td>
+            <td>
+                <p class="text-center">@Html.DisplayFor(modelItem => item.Gia) </p>
+            </td>
+            <td>
+                <p class="text-center">@Html.DisplayFor(modelItem => item.DanhMuc) </p>
+            </td>
+            <td>
+                @if (item.HinhAnh == null)
+                {
+                    <div class="form-control-static">No Image</div>
+                }
+                else
+                {
+                    <p class="text-center">
+                        <img class="img-thumbnail" width="75" height="75"
+                             src="@Url.Action("GetImage", "ProductManager", new { id = item.MaSanPham})" />
+                    </p>
+                }
+            </td>
+            <td style="text-align: center;">
+                @Html.ActionLink("Edit", "EditProduct", new { id = item.MaSanPham }, new { @class = "btn btn-outline-success" }) |
+                @Html.ActionLink("Delete", "DeleteProduct", new { id = item.MaSanPham }, new { @class = "btn btn-outline-danger" }))
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p class="text-center">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount </p>
+
+<div class="nav justify-content-center">
+    @Html.PagedListPager(Model, page => Url.Action("ProductTables", new { page = page }))
+</div>
+
