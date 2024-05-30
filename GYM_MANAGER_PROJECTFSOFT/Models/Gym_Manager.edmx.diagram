@@ -18,6 +18,7 @@
         <EntityTypeShape EntityType="GYM_ManagerModel.NHAPTHIETBI" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="GYM_ManagerModel.Phong" Width="1.5" PointX="3.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="GYM_ManagerModel.Profile" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GYM_ManagerModel.sysdiagram" Width="1.5" PointX="8.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GYM_ManagerModel.TAIKHOAN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GYM_ManagerModel.THANHVIEN" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="GYM_ManagerModel.THETHANHVIEN" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
@@ -39,15 +40,6 @@
         <AssociationConnector Association="GYM_ManagerModel.pk_profile" ManuallyRouted="false" />
         <AssociationConnector Association="GYM_ManagerModel.pk_profile3123123" ManuallyRouted="false" />
         <AssociationConnector Association="GYM_ManagerModel.pk_ThanhVien" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="GYM_ManagerModel.DONHANG" Width="1.5" PointX="3" PointY="3.625" />
-        <EntityTypeShape EntityType="GYM_ManagerModel.SANPHAM" Width="1.5" PointX="3" PointY="20.75" />
-        <EntityTypeShape EntityType="GYM_ManagerModel.GIOHANG" Width="1.5" PointX="6" PointY="4" />
-        <AssociationConnector Association="GYM_ManagerModel.FK__DONHANG__MaTaiKh__60A75C0F" />
-        <AssociationConnector Association="GYM_ManagerModel.FK__GIOHANG__MaSanPh__6477ECF3" />
-        <AssociationConnector Association="GYM_ManagerModel.FK__GIOHANG__MaTaiKh__656C112C" />
-        <EntityTypeShape EntityType="GYM_ManagerModel.CHITIETDONHANG" Width="1.5" PointX="8.25" PointY="15.5" />
-        <AssociationConnector Association="GYM_ManagerModel.FK__CHITIETDO__MaDon__628FA481" />
-        <AssociationConnector Association="GYM_ManagerModel.FK__CHITIETDO__MaSan__6383C8BA" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
