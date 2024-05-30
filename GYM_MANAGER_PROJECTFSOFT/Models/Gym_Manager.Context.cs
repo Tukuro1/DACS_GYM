@@ -38,13 +38,10 @@ namespace GYM_MANAGER_PROJECTFSOFT.Models
         public virtual DbSet<NHAPTHIETBI> NHAPTHIETBIs { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<THANHVIEN> THANHVIENs { get; set; }
         public virtual DbSet<THETHANHVIEN> THETHANHVIENs { get; set; }
         public virtual DbSet<THIETBI> THIETBIs { get; set; }
-        public virtual DbSet<DONHANG> DONHANGs { get; set; }
-        public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
-        public virtual DbSet<GIOHANG> GIOHANGs { get; set; }
-        public virtual DbSet<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
     }
 }
