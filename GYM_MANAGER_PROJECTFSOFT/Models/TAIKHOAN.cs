@@ -19,6 +19,8 @@ namespace GYM_MANAGER_PROJECTFSOFT.Models
         {
             this.NHAPTHIETBIs = new HashSet<NHAPTHIETBI>();
             this.Profiles = new HashSet<Profile>();
+            this.DONHANGs = new HashSet<DONHANG>();
+            this.GIOHANGs = new HashSet<GIOHANG>();
         }
     
         public int MaTaiKhoan { get; set; }
@@ -32,5 +34,9 @@ namespace GYM_MANAGER_PROJECTFSOFT.Models
         public virtual ICollection<NHAPTHIETBI> NHAPTHIETBIs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profile> Profiles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DONHANG> DONHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GIOHANG> GIOHANGs { get; set; }
     }
 }
