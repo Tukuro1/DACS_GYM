@@ -12,14 +12,12 @@ namespace GYM_MANAGER_PROJECTFSOFT.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CHITIETDONHANG
+    public partial class sysdiagram
     {
-        public int MaChiTietDon { get; set; }
-        public int MaDonHang { get; set; }
-        public int MaSanPham { get; set; }
-        public int SoLuong { get; set; }
-    
-        public virtual DONHANG DONHANG { get; set; }
-        public virtual SANPHAM SANPHAM { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
