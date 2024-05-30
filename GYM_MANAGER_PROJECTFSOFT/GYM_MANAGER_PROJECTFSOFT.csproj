@@ -72,6 +72,9 @@
     <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
@@ -174,23 +177,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\BlogManagerController.cs" />
     <Compile Include="Controllers\BrowseRegPackageManagerController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ClubManagerController.cs" />
     <Compile Include="Controllers\DeviceManagerController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImportDeviceManagerController.cs" />
     <Compile Include="Controllers\PackageAndCouponManagerController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductManagerController.cs" />
     <Compile Include="Controllers\RegisterPackageController.cs" />
     <Compile Include="Controllers\ServiceManagerController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
@@ -204,6 +205,9 @@
     <Compile Include="Models\BLOG.cs">
       <DependentUpon>Gym_Manager.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CHITIETDONHANG.cs">
+      <DependentUpon>Gym_Manager.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CLUB.cs">
       <DependentUpon>Gym_Manager.tt</DependentUpon>
     </Compile>
@@ -213,7 +217,13 @@
     <Compile Include="Models\DICHVU.cs">
       <DependentUpon>Gym_Manager.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DONHANG.cs">
+      <DependentUpon>Gym_Manager.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GIAMGIA.cs">
+      <DependentUpon>Gym_Manager.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GIOHANG.cs">
       <DependentUpon>Gym_Manager.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GOITAP.cs">
@@ -256,7 +266,7 @@
       <DependentUpon>Gym_Manager.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RoomDeviceInStock.cs" />
-    <Compile Include="Models\sysdiagram.cs">
+    <Compile Include="Models\SANPHAM.cs">
       <DependentUpon>Gym_Manager.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TAIKHOAN.cs">
@@ -285,6 +295,7 @@
     <Compile Include="Security\MyAuthorizeAttribute.cs" />
     <Compile Include="Security\SimpleSessionPersister.cs" />
     <Compile Include="ViewModel\AccountViewModel.cs" />
+    <Compile Include="ViewModel\ThongTinGiaoHang.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AdminStyle\css\sb-admin-2.css" />
@@ -2400,6 +2411,13 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\StockManager\RoomDeviceInStock.cshtml" />
     <Content Include="Views\UserManager\Edit.cshtml" />
+    <Content Include="Views\ProductManager\ProductTables.cshtml" />
+    <Content Include="Views\ProductManager\DeleteProduct.cshtml" />
+    <Content Include="Views\ProductManager\EditProduct.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
+    <Content Include="Views\Cart\Completed.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
