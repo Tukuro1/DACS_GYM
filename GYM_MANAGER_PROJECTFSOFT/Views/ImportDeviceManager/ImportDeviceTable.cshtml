@@ -80,7 +80,7 @@
             {
                 <td style="text-align: center;">
                     <a class="btn btn-outline-success" href="@Url.Action("EditImportDevice", "ImportDeviceManager", new {id = item.MaYeuCauNhap})">Edit</a>
-                    @if (taikhoan.TaiKhoan1 == "Kit")
+                    @if (taikhoan.Role == true)
                     {
                         <a class="btn btn-outline-success" href="@Url.Action("ApproveImportDevice", "ImportDeviceManager", new {id = item.MaYeuCauNhap})">Approve</a>
                     }

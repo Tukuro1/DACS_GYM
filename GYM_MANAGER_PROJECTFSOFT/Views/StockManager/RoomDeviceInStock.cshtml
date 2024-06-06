@@ -68,7 +68,7 @@
                 <p class="text-center">@item.TrangThaiTonKho</p>
             </td>
             <td style="text-align: center;">
-                @if (taikhoan.TaiKhoan1 == "kit")
+                @if (taikhoan.Role == true)
                 {
                     <a class="btn btn-outline-success" href="@Url.Action("EditDeviceInStock", "StockManager", new {id = item.MaThietBiTrongKho})">Edit</a>
                 }
